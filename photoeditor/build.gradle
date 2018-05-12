@@ -13,9 +13,9 @@ ext {
     libraryDescription = 'A Photo Editor library to edit image using paints,text,emoji and images'
 
     siteUrl = 'https://github.com/burhanrashid52/PhotoEditor'
-    gitUrl = 'https://github.com/burhanrashid52/PhotoEditor/issues'
+    gitUrl = 'https://github.com/burhanrashid52/PhotoEditor'
 
-    libraryVersion = '0.1.0'
+    libraryVersion = '0.1.1'
 
     developerId = 'burhanrashid52'
     developerName = 'Burhanuddin Rashid'
@@ -51,7 +51,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:27.0.2'
+    compile 'com.android.support:appcompat-v7:27.1.0'
     testCompile 'junit:junit:4.12'
 }
 
