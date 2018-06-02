@@ -1,6 +1,6 @@
 # PhotoEditor
 
-[![Downloads](https://img.shields.io/badge/Download-0.1.1-blue.svg)](https://bintray.com/burhanrashid52/maven/photoeditor) ![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg) [![Uplabs](https://img.shields.io/badge/Uplabs-PhotoEditor-orange.svg)](https://www.uplabs.com/posts/photoeditor)
+[![Downloads](https://img.shields.io/badge/Download-0.2.0-blue.svg)](https://bintray.com/burhanrashid52/maven/photoeditor) ![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg) [![JavaDoc](https://img.shields.io/badge/JavaDoc-PhotoEditor-blue.svg)](https://burhanrashid52.github.io/PhotoEditor/) [![Uplabs](https://img.shields.io/badge/Uplabs-PhotoEditor-orange.svg)](https://www.uplabs.com/posts/photoeditor)
  [![AndroidArsenal](https://img.shields.io/badge/Android%20Arsenal-PhotoEditor-blue.svg)](https://android-arsenal.com/details/1/6736) 
  [![AndroidDevDigest](https://img.shields.io/badge/AndroidDev%20Digest-%23185-brightgreen.svg)](https://www.androiddevdigest.com/digest-185)
  [![AwesomeAndroid](https://img.shields.io/badge/Awesome%20Android-%2397-pink.svg)](https://android.libhunt.com/newsletter/97)
@@ -10,6 +10,7 @@ A Photo Editor library with simple, easy support for image editing using paints,
 ## Features
 
 - [**Drawing**](#drawing) on image with option to change its Brush's Color,Size,Opacity and Erasing.
+- Apply [**Filter Effect**](#filter-effect) on image using MediaEffect
 - Adding/Editing [**Text**](#text) with option to change its Color with Custom Fonts.
 - Adding [**Emoji**](#emoji) with Custom Emoji Fonts.
 - Adding [**Images/Stickers**](#adding-imagesstickers)
@@ -27,16 +28,10 @@ A Photo Editor library with simple, easy support for image editing using paints,
 
 
 
-### Change Logs
-  - **0.1.1 :**
-        Changed `app:src="@drawable/got_s"` to `app:photo_src="@drawable/got_s"` in `PhotoEditorView` 
-
-
-
 ## Getting Started
 To start with this , you need to just simply add the dependencies in gradle file of app module like this
 ```
-implementation 'ja.burhanrashid52:photoeditor:0.1.1'
+implementation 'ja.burhanrashid52:photoeditor:0.2.0'
 ```
 or your can also import the :photoeditor module from sample for customization
 
@@ -105,6 +100,18 @@ We can customize our brush and paint with diffrent set of property.To start draw
 
 **Note**: Whenever you set any property for brush for drawing it will automatically enables the drawing mode
 
+
+
+## Filter Effect
+You can apply inbuild filter to the source images using 
+
+ `mPhotoEditor.setFilterEffect(PhotoFilter.BRIGHTNESS);`
+
+![](https://i.imgur.com/xXTGcVC.gif)
+
+You can also apply custom effect using `Custom.Builder`
+
+For more details check [Custom Filters](https://github.com/burhanrashid52/PhotoEditor/wiki/Filter-Effect)
 
 
 
@@ -180,7 +187,7 @@ It will take default fonts provided in the builder,If you want diffrent Emoji fo
    You need provide a file with callback method when edited image is saved
    
    ```
-    mPhotoEditor.saveImage(filePath, new PhotoEditor.OnSaveListener() {
+    mPhotoEditor.saveAsFile(filePath, new PhotoEditor.OnSaveListener() {
                     @Override
                     public void onSuccess(@NonNull String imagePath) {
                        Log.e("PhotoEditor","Image Saved Successfully");
@@ -192,6 +199,7 @@ It will take default fonts provided in the builder,If you want diffrent Emoji fo
                     }
                 });
 ```
+For more detail check [Saving](https://github.com/burhanrashid52/PhotoEditor/wiki/Saving)
     
 ## How to contribute?
 * Check out contribution guidelines 👉[CONTRIBUTING.md](https://github.com/burhanrashid52/PhotoEditor/blob/master/CONTRIBUTING.md)
