@@ -1,11 +1,13 @@
 # PhotoEditor
 
-[![Downloads](https://img.shields.io/badge/Download-0.2.0-blue.svg)](https://bintray.com/burhanrashid52/maven/photoeditor) ![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg) [![JavaDoc](https://img.shields.io/badge/JavaDoc-PhotoEditor-blue.svg)](https://burhanrashid52.github.io/PhotoEditor/) [![Uplabs](https://img.shields.io/badge/Uplabs-PhotoEditor-orange.svg)](https://www.uplabs.com/posts/photoeditor)
+[![Downloads](https://img.shields.io/badge/Download-0.3.3-blue.svg)](https://bintray.com/burhanrashid52/maven/photoeditor) ![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg) [![JavaDoc](https://img.shields.io/badge/JavaDoc-PhotoEditor-blue.svg)](https://burhanrashid52.github.io/PhotoEditor/) [![Uplabs](https://img.shields.io/badge/Uplabs-PhotoEditor-orange.svg)](https://www.uplabs.com/posts/photoeditor)
  [![AndroidArsenal](https://img.shields.io/badge/Android%20Arsenal-PhotoEditor-blue.svg)](https://android-arsenal.com/details/1/6736) 
  [![AndroidDevDigest](https://img.shields.io/badge/AndroidDev%20Digest-%23185-brightgreen.svg)](https://www.androiddevdigest.com/digest-185)
- [![AwesomeAndroid](https://img.shields.io/badge/Awesome%20Android-%2397-pink.svg)](https://android.libhunt.com/newsletter/97)
+ [![AwesomeAndroid](https://img.shields.io/badge/Awesome%20Android-%2397-red.svg)](https://android.libhunt.com/newsletter/97)
+[![AndroidWeekly](https://img.shields.io/badge/Android%20Weekly-%23312-blue.svg)](http://androidweekly.net/issues/issue-312)
+[![Mindorks](https://img.shields.io/badge/Mindorks%20Newsletter-%234-ff69b4.svg)](https://mindorks.com/newsletter/edition/4)
 
-A Photo Editor library with simple, easy support for image editing using paints,text,emoji and Sticker like stories.
+A Photo Editor library with simple, easy support for image editing using paints,text,filters,emoji and Sticker like stories.
 
 ## Features
 
@@ -31,7 +33,7 @@ A Photo Editor library with simple, easy support for image editing using paints,
 ## Getting Started
 To start with this , you need to just simply add the dependencies in gradle file of app module like this
 ```
-implementation 'ja.burhanrashid52:photoeditor:0.2.0'
+implementation 'ja.burhanrashid52:photoeditor:0.3.3'
 ```
 or your can also import the :photoeditor module from sample for customization
 
@@ -49,7 +51,7 @@ First you need to add `PhotoEditorView` in your xml layout
 ```
 Your can define your drawable or color resource directly using `app:photo_src`
 
-Your can set the image programatically by getting source from `PhotoEditorView` which will return a `ImageView` so that you can load image from resources,file or (Picasso/Glide)
+Your can set the image programmatically by getting source from `PhotoEditorView` which will return a `ImageView` so that you can load image from resources,file or (Picasso/Glide)
 ```
 PhotoEditorView mPhotoEditorView = findViewById(R.id.photoEditorView);
 
@@ -77,7 +79,7 @@ You can customize the properties in the PhotoEditor as per your requirement
 
 | Property  | Usage |
 | ------------- | ------------- |
-| `setPinchTextScalable()`  | set false to disable pinch to zoom on text insertion.By deafult its true
+| `setPinchTextScalable()`  | set false to disable pinch to zoom on text insertion.By default its true
 | `setDefaultTextTypeface()`  | set default text font to be added on image  |
 | `setDefaultEmojiTypeface()`  | set default font specifc to add emojis |
 
@@ -86,7 +88,7 @@ That's it we are done with setting up our library
 
 
 ## Drawing
-We can customize our brush and paint with diffrent set of property.To start drawing on image we need to enable the drawing mode
+We can customize our brush and paint with different set of property.To start drawing on image we need to enable the drawing mode
 
 ![](https://i.imgur.com/INi5LIy.gif)
 
@@ -123,11 +125,11 @@ You can add the text with input text and colorCode like this
 
 `mPhotoEditor.addText(inputText, colorCode);` 
 
-It will take default fonts provided in the builder,If you want diffrent fonts for diffrent text you can set typeface with each text like this 
+It will take default fonts provided in the builder,If you want different fonts for different text you can set typeface with each text like this
 
 `mPhotoEditor.addText(mTypeface,inputText, colorCode);`
 
-In order to edit the text you need the view which you will reacive in you PhotoEditor callback.This callback will trigger when you **Long Press** the added text
+In order to edit the text you need the view which you will receive in you PhotoEditor callback.This callback will trigger when you **Long Press** the added text
 
  ```
  mPhotoEditor.setOnPhotoEditorListener(new OnPhotoEditorListener() {
@@ -148,11 +150,11 @@ Now you can edit the text with a view like this
 
 ![](https://i.imgur.com/RP8kqz6.gif)
 
-You can add the Emoji by `PhotoEditor.getEmojis(getActivity());` which will return a list of emojis unicodes
+You can add the Emoji by `PhotoEditor.getEmojis(getActivity());` which will return a list of emojis unicode.
 
 `mPhotoEditor.addEmoji(emojiUnicode);`
 
-It will take default fonts provided in the builder,If you want diffrent Emoji fonts for diffrent emoji you can set typeface with each Emoji like this 
+It will take default fonts provided in the builder,If you want different Emoji fonts for different emoji you can set typeface with each Emoji like this
 
 `mPhotoEditor.addEmoji(mEmojiTypeface,emojiUnicode);`
 
@@ -219,12 +221,29 @@ Hit me on twitter [![Twitter](https://img.shields.io/badge/Twitter-%40burhanrash
 ## Credits
 This project is inspired from [PhotoEditorSDK](https://github.com/eventtus/photo-editor-android)
 
-## License
-Copyright 2018 Burhanuddin Rashid
+## Buy a cup of coffee
+If you found this project helpful or you learned something from the source code and want to thank me, consider buying me a cup of ☕️
+[PayPal](https://www.paypal.me/burhanrashid52)
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+## MIT License
 
-http://www.apache.org/licenses/LICENSE-2.0
+Copyright (c) 2018 Burhanuddin Rashid
 
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
  
